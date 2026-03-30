@@ -83,39 +83,6 @@
                 <th></th>
                 <th></th>
             </tr>
-            
-            {% for n in news %}
-            {% if n.news_id != news_id %}
-            <tr id="{{ n.news_id }}_Record">
-                <td id="{{ n.news_id }}_id" class="news_id" >{{ n.news_id }}</td>
-                <td id="{{ n.news_id }}_news_content" class="news_content">{{ n.news_content }}</td>
-                <td id="{{ n.news_id }}_hyperlink" class="hyperlink">{{ n.hyperlink }}</td>
-                <td>
-                    <button class="small_btn">
-                        <a id="{{ n.news_id }}_editbtn" href="{% url 'news_edit' news_id=n.news_id %}">Edit</a>
-                    </button>
-                </td>
-                <td>
-                    <button class="small_btn">
-                        <a id="{{ n.news_id }}_deletebtn" href="{% url 'news_delete' news_id=n.news_id %}">Delete</a>
-                    </button>
-                </td>
-            </tr>
-            {% else %}
-            <tr id="{{ n.news_id }}_Record">
-                <form method="POST">
-                    {% csrf_token %}
-                    <td id="{{ n.news_id }}_id" class="news_id" >{{ n.news_id }}</td>
-                    <td id="{{ n.news_id }}_news_content" class="news_content">{{ editnews_form.news_content }}</td>
-                    <td id="{{ n.news_id }}_hyperlink" class="hyperlink">{{ editnews_form.hyperlink }}</td>
-                    <td>
-                        <button type="submit" class="small_btn">Save</button>
-                    </td>
-                    <td>
-                        <button class="small_btn">
-                            <a href="{% url 'news_manager' %}">Cancel</a>
-                        </button>
-                    </td>
                     
                 </form>
             </tr>
