@@ -1,0 +1,154 @@
+{% extends 'EventWebSite/base.html' %}
+
+    {% load static %}
+    
+    {% block loadcss %}
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'css/EventWebSite/homepage.css' %}">
+
+    {% endblock %}
+
+    {% block title %}
+
+    <title>VIT-Tech</title>
+
+    {% endblock %}
+
+    {% block content %}
+
+    <div id="main_image">
+        <img src="{% static 'media\vitim.jpeg' %}" alt="slideshow Image 1">
+    </div>
+
+
+    
+    <div id="aboutus4" class="middle_content">
+        <p class="aboutus_title" id="aboutus">About Us</p>
+
+        <p id="aboutus_content">technoVIT'25 is the National Level technical fest of Institute of Technology, VIT University. Where students are given an opportunity to explore themselves.</p>
+
+    </div>
+
+    
+    
+    <div id="sponsers">
+        <div class="sponsers_title">Sponsers</div> 
+        <div class="sponsers_container">
+            <div class="sponser_item">
+                <div class="sponser_image"><img src="{% static 'media/fasoos.png' %}"></div>
+            </div>
+
+
+            <div class="sponser_item">
+                <div class="sponser_image"><img src="{% static 'media/Paytm_logo.png' %}"></div>
+            </div>
+
+            <div class="sponser_item">
+                <div class="sponser_image"><img src="{% static 'media/rebull.png' %}"></div>
+            </div>
+
+            <div class="sponser_item">
+                <div class="sponser_image"><img src="{% static 'media/ibm.png' %}"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="contact_us_container" class="contact_us_container">
+        <div class="contact_tile">
+            <h1>Contact us</h1>
+            <hr color="#fff" width="60px">
+        </div>
+         
+        <div class="contact_data">
+            <div class="contact">
+                <h2><p>Sivashree</p></h2>
+                <h4><p class="email_contact">sivashree@123.ac.in</p>
+                <p class="contactno_contact">+91 10101 15110</p>
+                <p class="linkedin_contact"><a  class="linkedin" href="https://www.linkedin.com/in/shivvv117">https://www.linkedin.com/in/shivvv117</a></p></h4>
+            </div>
+    
+            
+       <div class="contact">
+                <h2><p>Vedhanayaki</p></h2>
+                <h4><p class="email_contact">vedhanayaki@123.ac.in</p>
+                <p class="contactno_contact">+91 10101 15110</p>
+                <p class="linkedin_contact"><a  class="linkedin" href="https://www.linkedin.com/in/vedhanayaki">https://www.linkedin.com/in/vedhanayaki</a></p></h4>
+            </div>
+    </div>
+
+    <style>
+        .notice{
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 90%;
+        }
+
+        .notice .main{
+            background-color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+
+        .notice .align_center{
+            text-align: center;
+        }
+
+        .notice .closeNotice{
+            height: unset;
+            width: unset;
+            padding: 8px 25px;
+            border-radius: 10px;
+            font-size: 120%;
+            background-image: linear-gradient(to right, #4867e0 60%, #329fec);
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        @media only screen and (max-width: 1140px) {
+            #notice1 {
+                display: block;
+            }
+        }
+        #notice1{
+            z-index: 10;
+        }
+
+        /* #notice2{
+            display: block;
+        } */
+    </style>
+
+    <div id="notice1" class="notice">
+        <div class="main">
+            <h1 class="align_center">Notice</h1>
+            <p>This website is only designed for viewing on desktop browsers. So, to have good experience kindly open this on Desktop/Laptop Browser.</p>
+            <div class="align_center">
+                <button onclick="closeNotice1()" id="closeNoticebtn" class="closeNotice">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div id="notice2" class="notice">
+        <div class="main">
+            <p>For better understanding of project please visit <a href="https://github.com/bhargavprajapati949/EventManagementSystem" target="_blank">Documentation.</a></p>
+            <div class="align_center">
+                <button onclick="closeNotice2()" id="closeNoticebtn" class="closeNotice">Close</button>
+            </div>
+        </div>
+    </div> -->
+
+    <script>
+        function closeNotice1(){
+            document.getElementById('notice1').style.display = "none";
+        }
+
+        function closeNotice2(){
+            document.getElementById('notice2').style.display = "none";
+        }
+    </script>
+    {% endblock %}
